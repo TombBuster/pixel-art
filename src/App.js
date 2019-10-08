@@ -10,6 +10,8 @@ class App extends Component {
 
   state = {
     colour: 'red',
+    columns: '3',
+    rows: '4',
     grid: grid 
   }
 
@@ -34,8 +36,10 @@ class App extends Component {
     this.setState({colour: newColour})
 }
 
-  sizeChange = (newSize) => {
+  sizeChange = (newSize, columns, rows) => {
     this.setState({grid: newSize})
+    this.setState({columns: columns})
+    this.setState({rows: rows})
   }
 
   render() {

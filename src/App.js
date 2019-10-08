@@ -3,30 +3,16 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import Header from './components/layout/Header';
 import Grid from './components/Grid';
 import ColourChange from './components/ColourChange';
+import grid from './grid.json';
 
 class App extends Component {
 
   state = {
     colour: 'red',
-    grid: [
-      {
-        id: '1',
-        colour: 'blue',
-        filled: false,
-      },
-      {
-        id: '2',
-        colour: 'blue',
-        filled: true,
-      },
-      {
-        id: '3',
-        colour: 'blue',
-        filled: false
-      }
-    ]
+    grid: grid 
   }
 
+  
 
   markFilled = (id) => {
     

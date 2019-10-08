@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "colour": "blue",
+      "filled": false
+    },
+    {
+        "id": 2,
+        "colour": "blue",
+        "filled": true
+    },
+    {
+        "id": 3,
+        "colour": "blue",
+        "filled": false
+    }
+]

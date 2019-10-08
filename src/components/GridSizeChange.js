@@ -9,11 +9,11 @@ class GridSizeChange extends Component {
         var rows = 10;
         var gridNew = '[\r\n';
 
-        for (var i=0; i < columns*rows; i++) {
+        for (var i=0; i < columns*rows-1; i++) {
             gridNew += `{\r\n"id": ${i},\r\n"colour": "blue",\r\n"filled": false\r\n},\r\n`
         }
         
-        gridNew += `{\r\n"id": ${columns*rows},\r\n"colour": "blue",\r\n"filled": false\r\n}\r\n]`
+        gridNew += `{\r\n"id": ${columns*rows-1},\r\n"colour": "blue",\r\n"filled": false\r\n}\r\n]`
         
         var gridAttempt = JSON.parse(gridNew)
         

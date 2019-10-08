@@ -5,13 +5,14 @@ import Grid from './components/Grid';
 import ColourChange from './components/ColourChange';
 import GridSizeChange from './components/GridSizeChange';
 import grid from './grid.json';
+import './App.css';
 
 class App extends Component {
 
   state = {
     colour: 'red',
     columns: '3',
-    rows: '4',
+    rows: '3',
     grid: grid 
   }
 
@@ -19,7 +20,7 @@ class App extends Component {
 
   markFilled = (id) => {
     
-  
+    console.log(id)
     
     this.setState( { grid: this.state.grid.map(gridi => {
       if(gridi.id === id) {
@@ -39,7 +40,9 @@ class App extends Component {
   sizeChange = (newSize, columns, rows) => {
     this.setState({grid: newSize})
     this.setState({columns: columns})
+    document.documentElement.style.setProperty("--colNum", columns);
     this.setState({rows: rows})
+    document.documentElement.style.setProperty("--rowNum", rows);
   }
 
   render() {
@@ -50,7 +53,9 @@ class App extends Component {
             
               <Route exact path="/" render={props => (
                 <React.Fragment>
-                  <Grid grid={this.state.grid} markFilled={this.markFilled}/>
+                  <div className="Grid-format">
+                  <Grid  grid={this.state.grid} markFilled={this.markFilled}/>
+                  </div>
                   <ColourChange onColourChange={this.colourChange} />
                   <GridSizeChange onSizeChange={this.sizeChange} />
                 </React.Fragment>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../App.css';
 
 class GridSpace extends Component {
     
@@ -16,12 +17,12 @@ class GridSpace extends Component {
         const id = this.props.gridi.id;
         
         return (
-            <div>
-                <button onClick={this.props.markFilled.bind(this, id)} style={this.buttonStyle()}></button>{' '}
-                
-            </div>
+            
+                <button style={this.buttonStyle()} onClick={this.props.markFilled.bind(this, id)}></button>
+            
         )
     }
 }
+
 
 export default GridSpace;

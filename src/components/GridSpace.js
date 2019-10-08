@@ -13,7 +13,7 @@ class GridSpace extends Component {
     
     render() {
         
-        const id = this.props.gridi;
+        const id = this.props.gridi.id;
         
         return (
             <div>

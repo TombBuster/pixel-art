@@ -1,0 +1,7 @@
+:root {
+    --backColour: black;
+}
+
+.checkColour {
+    background-color: var(--backColour);
+}

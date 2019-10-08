@@ -34,6 +34,7 @@ class App extends Component {
     
     this.setState( { grid: this.state.grid.map(gridi => {
       if(gridi.id === id) {
+          
           gridi.filled = !gridi.filled
           gridi.colour = this.state.colour
       }

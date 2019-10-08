@@ -2,24 +2,26 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import Header from './components/layout/Header';
 import Grid from './components/Grid';
+import ColourChange from './components/ColourChange';
 
 class App extends Component {
 
   state = {
+    colour: 'red',
     grid: [
       {
         id: '1',
-        name: 'grid-space-1',
+        colour: 'blue',
         filled: false,
       },
       {
         id: '2',
-        name: 'grid-space-2',
+        colour: 'blue',
         filled: true,
       },
       {
         id: '3',
-        name: 'grid-space-3',
+        colour: 'blue',
         filled: false
       }
     ]
@@ -33,11 +35,16 @@ class App extends Component {
     this.setState( { grid: this.state.grid.map(gridi => {
       if(gridi.id === id) {
           gridi.filled = !gridi.filled
+          gridi.colour = this.state.colour
       }
       return gridi;
     })
   })
   }
+
+  colourChange = (newColour) => {
+    this.setState({colour: newColour})
+}
 
 
   render() {
@@ -49,6 +56,7 @@ class App extends Component {
               <Route exact path="/" render={props => (
                 <React.Fragment>
                   <Grid grid={this.state.grid} markFilled={this.markFilled}/>
+                  <ColourChange onColourChange={this.colourChange} />
                 </React.Fragment>
               )} />
 

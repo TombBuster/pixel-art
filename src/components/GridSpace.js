@@ -7,18 +7,18 @@ class GridSpace extends Component {
             padding: '10px',
             borderBottom: '1px #ccc dotted',
             background: this.props.gridi.filled ? 
-            'black' : 'white'
+            this.props.gridi.colour : 'white'
         }
     }
     
     render() {
         
-        const { id, name } = this.props.gridi;
+        const id = this.props.gridi;
         
         return (
             <div>
-                <button onClick={this.props.markFilled.bind(this, id)} style={this.buttonStyle()}>x</button>{' '}
-                { name }
+                <button onClick={this.props.markFilled.bind(this, id)} style={this.buttonStyle()}></button>{' '}
+                
             </div>
         )
     }

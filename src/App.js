@@ -12,7 +12,7 @@ class App extends Component {
   state = {
     colour: 'red',
     columns: '3',
-    rows: '3',
+    //rows: '3',
     grid: grid 
   }
 
@@ -37,12 +37,12 @@ class App extends Component {
     this.setState({colour: newColour})
 }
 
-  sizeChange = (newSize, columns, rows) => {
+  sizeChange = (newSize, columns) => {
     this.setState({grid: newSize})
     this.setState({columns: columns})
     document.documentElement.style.setProperty("--colNum", columns);
-    this.setState({rows: rows})
-    document.documentElement.style.setProperty("--rowNum", rows);
+    //this.setState({rows: rows})
+    document.documentElement.style.setProperty("--rowNum", columns);
   }
 
   render() {

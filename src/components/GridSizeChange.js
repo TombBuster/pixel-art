@@ -5,19 +5,19 @@ class GridSizeChange extends Component {
     
     setSizeChange = () => {
         //var col = this.refs.input.value;
-        var columns = 10;
-        var rows = 10;
+        var columns = this.refs.inputSize.value;
+        //var rows = 10;
         var gridNew = '[\r\n';
 
-        for (var i=0; i < columns*rows-1; i++) {
+        for (var i=0; i < columns*columns-1; i++) {
             gridNew += `{\r\n"id": ${i},\r\n"colour": "blue",\r\n"filled": false\r\n},\r\n`
         }
         
-        gridNew += `{\r\n"id": ${columns*rows-1},\r\n"colour": "blue",\r\n"filled": false\r\n}\r\n]`
+        gridNew += `{\r\n"id": ${columns*columns-1},\r\n"colour": "blue",\r\n"filled": false\r\n}\r\n]`
         
         var gridAttempt = JSON.parse(gridNew)
         
-            this.props.onSizeChange(gridAttempt, columns, rows);
+            this.props.onSizeChange(gridAttempt, columns);
         // TODO: input validation, maybe fixed length hex?
     }
     
@@ -25,6 +25,11 @@ class GridSizeChange extends Component {
     render() {
         return (
             <div>
+                <input
+                ref='inputSize'
+                type="text"
+                placeholder="Size..."
+                />
                 <button onClick={this.setSizeChange}>Apply</button>
             </div>
         )

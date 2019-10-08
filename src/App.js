@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import Header from './components/layout/Header';
 import Grid from './components/Grid';
 import ColourChange from './components/ColourChange';
+import GridSizeChange from './components/GridSizeChange';
 import grid from './grid.json';
 
 class App extends Component {
@@ -33,6 +34,9 @@ class App extends Component {
     this.setState({colour: newColour})
 }
 
+  sizeChange = (newSize) => {
+    this.setState({grid: newSize})
+  }
 
   render() {
     return (
@@ -44,6 +48,7 @@ class App extends Component {
                 <React.Fragment>
                   <Grid grid={this.state.grid} markFilled={this.markFilled}/>
                   <ColourChange onColourChange={this.colourChange} />
+                  <GridSizeChange onSizeChange={this.sizeChange} />
                 </React.Fragment>
               )} />
 

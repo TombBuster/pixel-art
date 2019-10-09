@@ -10,8 +10,9 @@ class LoadArt extends Component {
         
         var textPromise = file_to_read.text()
         textPromise.then(text => { 
-            
+            console.log(text)
             var testrun = JSON.parse(text) 
+            console.log(testrun)
             var col = Math.sqrt(testrun.length)
             this.props.loadFile(col, testrun)
         

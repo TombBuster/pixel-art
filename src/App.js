@@ -5,6 +5,7 @@ import Grid from './components/Grid';
 import ColourChange from './components/ColourChange';
 import GridSizeChange from './components/GridSizeChange';
 import LoadArt from './components/LoadArt';
+import SaveArt from './components/SaveArt';
 
 import grid from './grid.json';
 import './App.css';
@@ -15,8 +16,7 @@ class App extends Component {
     colour: 'red',
     columns: '4',
     //rows: '3',
-    grid: grid ,
-    test: 'This is a test.'
+    grid: grid 
   }
 
   
@@ -72,7 +72,7 @@ class App extends Component {
                   <ColourChange onColourChange={this.colourChange} />
                   <GridSizeChange onSizeChange={this.sizeChange} />
                   <LoadArt loadFile={this.loadFile} />
-                  <div>{ this.state.test }</div>
+                  <SaveArt grid={this.state.grid} />
                 </React.Fragment>
               )} />
 

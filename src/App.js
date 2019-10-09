@@ -48,9 +48,14 @@ class App extends Component {
     document.documentElement.style.setProperty("--rowNum", columns);
   }
 
-  loadFile = (myfile) => {
-    //this.setState({grid: myfile})
-     console.log(myfile)
+  loadFile = (col, myfile) => {
+    
+    this.setState({grid: myfile})
+    this.setState({columns: col})
+    document.documentElement.style.setProperty("--colNum", col);
+    //this.setState({rows: rows})
+    document.documentElement.style.setProperty("--rowNum", col);
+     
   }
 
   render() {

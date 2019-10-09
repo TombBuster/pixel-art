@@ -6,13 +6,13 @@
 },
 {
 "id": 1,
-"colour": "blue",
-"filled": false
+"colour": "red",
+"filled": true
 },
 {
 "id": 2,
-"colour": "blue",
-"filled": false
+"colour": "green",
+"filled": true
 },
 {
 "id": 3,
@@ -26,8 +26,8 @@
 },
 {
 "id": 5,
-"colour": "blue",
-"filled": false
+"colour": "yellow",
+"filled": true
 },
 {
 "id": 6,

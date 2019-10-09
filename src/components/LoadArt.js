@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { read } from 'fs';
 
 
 class LoadArt extends Component {
@@ -8,21 +9,23 @@ class LoadArt extends Component {
       
         var output = [];
         var file_to_read = document.getElementById("userFile").files[0];
-        var fileread = new FileReader();
+        /* var fileread = new FileReader();
         fileread.onload = function(e) {
             var content = e.target.result;
             var intern = JSON.parse(content);
             
-            var myVar = JSON.stringify(intern)
-            output[0] = myVar;
-            console.log(myVar);
+           
+            //console.log(myVar);
             //return myVar 
             
             //storeResults(myVar)
         };
         
-        fileread.readAsText(file_to_read);
-        console.log(output)
+        fileread.readAsText(file_to_read); */
+        var textPromise = file_to_read.text()
+        textPromise.then(text => { this.props.loadFile(text) })
+
+        //console.log(output)
         
         
         /*function storeResults(result) {

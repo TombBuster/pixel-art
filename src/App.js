@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Grid from './components/Grid';
 import ColourChange from './components/ColourChange';
 import GridSizeChange from './components/GridSizeChange';
+import LoadArt from './components/LoadArt';
+
 import grid from './grid.json';
 import './App.css';
 
@@ -11,9 +13,10 @@ class App extends Component {
 
   state = {
     colour: 'red',
-    columns: '3',
+    columns: '4',
     //rows: '3',
-    grid: grid 
+    grid: grid ,
+    test: 'This is a test.'
   }
 
   
@@ -45,6 +48,11 @@ class App extends Component {
     document.documentElement.style.setProperty("--rowNum", columns);
   }
 
+  loadFile = (myfile) => {
+    //this.setState({grid: myfile})
+     console.log(myfile)
+  }
+
   render() {
     return (
       <Router>  
@@ -58,6 +66,8 @@ class App extends Component {
                   </div>
                   <ColourChange onColourChange={this.colourChange} />
                   <GridSizeChange onSizeChange={this.sizeChange} />
+                  <LoadArt loadFile={this.loadFile} />
+                  <div>{ this.state.test }</div>
                 </React.Fragment>
               )} />
 

@@ -17,7 +17,18 @@ class GridSizeChange extends Component {
         
         var gridAttempt = JSON.parse(gridNew)
         
-            this.props.onSizeChange(gridAttempt, columns);
+        var fs = require('browserify-fs');
+
+        fs.mkdir('./home', function() {
+            fs.writeFile('./hello-world.txt', 'Hello world!\n', function() {
+                fs.readFile('./hello-world.txt', 'utf-8', function(err, data) {
+                    console.log(data);
+                });
+            });
+        });
+
+
+        this.props.onSizeChange(gridAttempt, columns);
         // TODO: input validation, maybe fixed length hex?
     }
     

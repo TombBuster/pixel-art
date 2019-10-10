@@ -46,6 +46,8 @@ class App extends Component {
     document.documentElement.style.setProperty("--colNum", columns);
     //this.setState({rows: rows})
     document.documentElement.style.setProperty("--rowNum", columns);
+    
+    
   }
 
   loadFile = (col, myfile) => {
@@ -62,21 +64,25 @@ class App extends Component {
     return (
       <Router>  
       <div className="App">
-          <div className="container"></div>
+          <div className="container">
             
               <Route exact path="/" render={props => (
                 <React.Fragment>
                   <div className="Grid-format">
                   <Grid  grid={this.state.grid} markFilled={this.markFilled}/>
                   </div>
+                  <footer>
                   <ColourChange onColourChange={this.colourChange} />
                   <GridSizeChange onSizeChange={this.sizeChange} />
                   <LoadArt loadFile={this.loadFile} />
                   <SaveArt grid={this.state.grid} />
+                  </footer>
+                  
                 </React.Fragment>
+                
               )} />
 
-        
+        </div>
       </div>
       </Router>
     );

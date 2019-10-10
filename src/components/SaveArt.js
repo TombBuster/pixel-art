@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './components-css.css'
 
 class SaveArt extends Component {
     
@@ -26,10 +27,10 @@ class SaveArt extends Component {
     render() {
         return (
             
-            <div>
-                <a ref="downloadButton" >
+            <div className="footer-comp">
                     <input type="text" ref="saveAs" placeholder="Name..."></input>
-                    <button ref="downloadButton" onClick={this.onClick}>Save</button>
+                    <a ref="downloadButton">
+                    <button onClick={this.onClick}>Save</button>
                     </a>
             </div>
         )

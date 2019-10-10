@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './components-css.css'
 
 class LoadArt extends Component {
     
@@ -23,8 +23,9 @@ class LoadArt extends Component {
     
     render() {
         return (
-           <div>
+           <div className="footer-comp">
                 <input
+                style={inputStyle}
                 type="file"
                 id="userFile"/>
                 <button onClick={this.load}>Load</button>
@@ -33,6 +34,10 @@ class LoadArt extends Component {
 
         )
     }
+}
+
+const inputStyle = {
+    background: 'white',
 }
 
 export default LoadArt

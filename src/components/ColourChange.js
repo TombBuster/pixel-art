@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './components-css.css'
 
 export class ColourChange extends Component {
 
@@ -7,14 +8,14 @@ export class ColourChange extends Component {
         try{
             return {
                 padding: '10px',
-                borderBottom: '1px #ccc dotted',
+                borderBottom: '2px #fff',
                 background: this.refs.input.value
             }
         }
         catch(err) {
             return {
                 padding: '10px',
-                borderBottom: '1px #ccc dotted',
+                borderBottom: '2px #fff',
                 background: 'black'
             }
         }
@@ -36,7 +37,7 @@ export class ColourChange extends Component {
    
     render() {
         return (
-            <div>
+            <div className="colourStyle">
                 <input ref='input'
                 type="text"
                 placeholder="Colour..."
@@ -49,7 +50,6 @@ export class ColourChange extends Component {
         )
     }
 }
-
 
 
 

@@ -1,13 +1,30 @@
+
 :root {
   --rowNum: 3;
   --colNum: 3;
-  --gridHeight: 50px;
 }
 
-
+body { background: '#808080';}
 
 .Grid-format {
   display: grid;
-  grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
-  grid-template-columns: repeat(var(--colNum), var(--gridHeight));
+  justify-content: center;
+  
+  align-self: center;
+ 
+  grid-template-rows: repeat(var(--rowNum), 1fr);
+  grid-template-columns: repeat(var(--colNum), 1fr);
+  height: 90vh;
+  width: 90vh;
+  margin: 2vh 0vh 2vh 50vh;
+  
+}
+
+footer {
+  background: blue;
+  text-align: center;
+  position: absolute;
+  
+  width: 100vw;
+  height: 6vh;
 }

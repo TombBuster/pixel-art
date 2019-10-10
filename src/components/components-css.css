@@ -1,0 +1,10 @@
+.colourStyle {
+    display: flex;
+    justify-content: center;
+    width: '100%';
+    margin: 1% 1% 1% 2%;    
+}
+
+.footer-comp {
+    margin: 1%;
+}
